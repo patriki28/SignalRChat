@@ -1,31 +1,88 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
-
-<div class="container">
-    <div class="row p-1">
-        <div class="col-1">User</div>
-        <div class="col-5"><input type="text" id="userInput" /></div>
+﻿<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">Room</div>
+        <div class="col-4"><input type="text" id="room" /></div>
     </div>
-    <div class="row p-1">
-        <div class="col-1">Message</div>
-        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
-    </div>
-    <div class="row p-1">
-        <div class="col-6 text-end">
-            <input type="button" id="sendButton" value="Send Message" />
-        </div>
-    </div>
-    <div class="row p-1">
+    <div class="row">&nbsp;</div>
+    <div class="row">
         <div class="col-6">
-            <hr />
+            <input type="button" id="joinButton" value="Join Room" />
         </div>
-    </div>
-    <div class="row p-1">
-        <div class="col-6">
-            <ul id="messagesList"></ul>
+        <div class="col-2">
+            <button id="leaveButton">Leave Room</button>
         </div>
     </div>
 </div>
+
+<div class="container">
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-2">User</div>
+        <div class="col-4"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row">
+        <div class="col-2">Message</div>
+        <div class="col-4"><input type="text" id="messageInput" /></div>
+    </div>
+    <div class="row">&nbsp;</div>
+    <div class="row">
+        <div class="col-6">
+            <input type="button" id="sendButton" value="Send Message" />
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <hr />
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <ul id="messagesList"></ul>
+    </div>
+</div>
+
+<style>
+    
+    .sent-message {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        margin: 5px 0;
+    }
+
+    .received-message {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 5px 0;
+    }
+    .sent-message .message-name{
+        display:none;
+    }
+
+    .sent-message .message-text {
+        margin-top: 5px;
+        color: #fff;
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #007bff;
+    }
+
+    .received-message .message-text {
+        margin-top: 5px;
+        color: #191919;
+        margin: 5px 0;
+        padding: 5px;
+        border-radius: 10px;
+        background-color: #D3D3D3;
+    }
+
+    
+
+</style>
+
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script src="~/js/chat.js"></script>
